@@ -1,1 +1,5 @@
 <h2>My Bookings</h2>
+
+<% @bookings.each do |booking| %>
+  <p><% booking.location %></p>
+<% end %>
