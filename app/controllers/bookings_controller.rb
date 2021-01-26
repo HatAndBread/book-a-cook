@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def my_bookings
-    @bookings = Booking.where(:user_id == current_user).order(start_time: :ASC)
+    @bookings = Booking.where(user: current_user).order(start_time: :ASC)
   end
 
   def new
