@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>All courses</h1>
+  <div class="row justify-content-center">
+    <% @courses.each do |course| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= course.title %></h5>
+          <a href="#" class="btn btn-primary">More Info</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
