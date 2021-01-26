@@ -1,6 +1,6 @@
 class Course < ApplicationRecord
   belongs_to :user
-  belongs_to :booking
+  has_many :bookings
   has_many :photos
 
   validates :title, presence: true
