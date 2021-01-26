@@ -6,7 +6,7 @@
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%= course.title %></h5>
-          <a href="#" class="btn btn-primary">More Info</a>
+          <%= link_to "More Info", course_path(course), class: "btn btn-primary" %>
         </div>
       </div>
     <% end %>
