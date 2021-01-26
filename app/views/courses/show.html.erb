@@ -2,5 +2,5 @@
   <h1><%= @course.title %></h1>
   <p><%= @course.description%></p>
   <p><%= @course.price %></p>
-  <%= link_to "Book this course!", new_booking_path %>
+  <%= link_to "Book this course!", new_course_booking_path(@course) %>
 </div>
