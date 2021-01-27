@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def my_bookings
-    @bookings = Booking.where(user: current_user).order(start_time: :ASC)
+    @bookings = Booking.where(user: current_user).order(created_at: :ASC)
     authorize @bookings
   end
 
@@ -15,12 +15,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.course = @course
-    @booking.status = false
     authorize @booking
     if @booking.save
       redirect_to my_bookings_path
     else
-      @booking.save!
       render :new
     end
   end
