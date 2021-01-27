@@ -2,7 +2,9 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :course
 
-  validates :status, inclusion: [true, false]
+  STATUS = %w[approved pending denied cancelled]
+
+  validates :status, inclusion: { in: STATUS }
   validates :attendees, presence: true
   validates :attendees, numericality: {only_integer: true}
   validates :start_time, presence: true
