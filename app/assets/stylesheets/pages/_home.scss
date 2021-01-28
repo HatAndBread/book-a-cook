@@ -94,8 +94,19 @@ p.description {
     font-weight: bold;
   }
 
-  .logo-info {
-    width: 90px;
-    margin-top: 4vh;
+  .info-header {
+    display: flex;
+    align-items: center;
+
+    .logo-info {
+      width: 90px;
+    }
+
+    .info-header-bar {
+      background-color: black;
+      height: 7px;
+      width: 77px;
+      border-radius: 50px;
+    }
   }
 }
