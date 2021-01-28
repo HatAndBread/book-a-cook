@@ -9,7 +9,7 @@
 
   <div class="banner-button">
     <%= link_to courses_path do %>
-      <i class='bx bxs-dish dish'></i>
+        <i class='bx bxs-dish dish'></i>
       <p>Take a look</p>
     <% end %>
   </div>
@@ -17,5 +17,12 @@
 
 <div class="landing-info">
   <h2>how does it work?</h2>
-  <%= image_tag "chef.png" %>
+  <div class="info-header">
+    <div class="info-header-bar"></div>
+    <%= image_tag "chef.png", {class: "logo-info"} %>
+    <div class="info-header-bar"></div>
+  </div>
+  <div class="info-card">
+
+  </div>
 </div>
