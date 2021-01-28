@@ -2,8 +2,8 @@
   <h1>All courses</h1>
   <div class="row justify-content-center">
     <% @courses.each do |course| %>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card" style="width: 18rem">
+        <%= cl_image_tag course.photos.sample.key, height: 300, width: 280, crop: :fill %>
         <div class="card-body">
           <h5 class="card-title"><%= course.title %></h5>
           <%= link_to "More Info", course_path(course), class: "btn btn-primary" %>
