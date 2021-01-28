@@ -1,12 +1,39 @@
 <div class="container">
   <h1>All courses</h1>
-  <div class="row justify-content-center">
+
+  <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>  
+    <%= select_tag :categories, options_for_select(Course::CATEGORIES) %>     
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Example select</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <% Course::INGREDIENTS.each do |t| %>
+          <option><%= t %></option>
+        <% end %>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div class="courses">
     <% @courses.each do |course| %>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"><%= course.title %></h5>
-          <%= link_to "More Info", course_path(course), class: "btn btn-primary" %>
+      <div class="course_card">
+        <div class="text-overlay">
+          <div class="c-title">
+            <h3><%= course.title %></h3>
+            <p><%= course.user.first_name %></p>
+          </div>
+          <div>
+            <% course.category_list.each do |t| %>
+              <p class="tag"><%= t %></p>
+            <% end %>
+            <% course.ingredient_list.each do |t| %>
+              <p class="tag"><%= t %></p>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

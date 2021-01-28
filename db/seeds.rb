@@ -20,6 +20,9 @@ end
   course.user = User.all.sample
   course.user
   course.save
+  course.ingredient_list = [Course::INGREDIENTS.sample]
+  course.category_list = [Course::CATEGORIES.sample]
+  course.save
   puts "Randomly generated course:"
   p course
 end
