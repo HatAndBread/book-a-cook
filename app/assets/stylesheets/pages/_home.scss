@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+
+// Banner
 .home-video-wrapper {
   height: 100vh;
   display: flex;
@@ -6,15 +8,15 @@
 }
 
 .dark-cover {
-   width: 98.7vw;
-   height: 100vh;
-   position: absolute;
-   object-fit: cover;
-   background-color: rgba(0,0,0,0.4);
+  width: 98.99vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  background-color: rgba(0,0,0,0.4);
 }
 
 .home_video {
-  width: 98.7vw;
+  width: 98.99vw;
   height: 100vh;
   position: absolute;
   object-fit: cover;
@@ -75,4 +77,15 @@ p.description {
     font-family: Poppins;
     font-weight: 600;
   }
+}
+
+//Info Under Banner
+.landing-info {
+  height: 100vh;
+  width: 98.99vw;
+  background-image: asset-url("seigaiha.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
