@@ -6,9 +6,11 @@
   <h1 class="home">Turn Your Kitchen Into Your Next Favourite Restaurant</h1>
   <p class="description">Book our personal chef service for dinner parties and weekly meal-prep</p>
 
-  <div class="banner-button">
-    <i class='bx bxs-dish dish'></i>
-    <p>Take a look</p>
-  </div>
 
+  <div class="banner-button">
+    <%= link_to courses_path do %>
+      <i class='bx bxs-dish dish'></i>
+      <p>Take a look</p>
+    <% end %>
+  </div>
 </div>
