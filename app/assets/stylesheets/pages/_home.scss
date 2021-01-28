@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+.home-video-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-cover {
+   width: 98.7vw;
+   height: 100vh;
+   position: absolute;
+   object-fit: cover;
+   background-color: rgba(0,0,0,0.4);
+}
+
+.home_video {
+  width: 98.7vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+}
+
+
+h1.home {
+  color: white;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 61px;
+  padding-top: 20vh;
+  padding-right: 47vw;
+  margin-left: 10vw;
+  z-index: 1;
+}
+
+p.description {
+  color: white;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 26.4px;
+  padding-right: 47vw;
+  margin-left: 10vw;
+  z-index: 1;
+}
+// hello
