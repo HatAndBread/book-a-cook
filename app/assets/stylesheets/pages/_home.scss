@@ -43,4 +43,29 @@ p.description {
     margin-left: 10vw;
     z-index: 1;
 }
-// hello
+
+.banner-button {
+  background-color: #D9BD54;
+  width: 247px;
+  height: 66px;
+  border-radius: 50px;
+  margin-left: 9vw;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 23px;
+  padding-top: 0.5vh;
+
+  .dish {
+    font-size: 47px;
+    padding-bottom: 1.8vh;
+  }
+
+  p {
+    margin: 0;
+    font-family: Poppins;
+    font-weight: 600;
+  }
+}
