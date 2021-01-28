@@ -1,0 +1,30 @@
+.courses {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  
+}
+
+.course_card {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://picsum.photos/300/300');
+  border-radius: 5px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.text-overlay {
+  width: 100%;
+  height: 150px;
+  background: rgb(232,225,60);
+  background: linear-gradient(180deg, rgba(232,225,60,0) 0%, rgba(47,50,48,1) 100%);  
+  border-radius: 5px;  
+}
+
+.c-title {
+  color: white;
+}
