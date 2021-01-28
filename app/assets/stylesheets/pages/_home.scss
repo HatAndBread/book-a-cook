@@ -51,12 +51,19 @@ p.description {
   border-radius: 50px;
   margin-left: 9vw;
   z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 23px;
   padding-top: 0.5vh;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 23px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 
   .dish {
     font-size: 47px;
