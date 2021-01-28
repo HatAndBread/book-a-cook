@@ -1,11 +1,9 @@
 <div class="container">
   <h1>All courses</h1>
-
-  <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>  
-    <%= select_tag :categories, options_for_select(Course::CATEGORIES) %>     
+  <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>
+    <%= select_tag :categories, options_for_select(Course::CATEGORIES) %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  
   <form>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Example select</label>
@@ -17,10 +15,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-
   <div class="courses">
     <% @courses.each do |course| %>
-      <div class="course_card">
+      <div class="course_card" style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" >
         <div class="text-overlay">
           <div class="c-title">
             <h3><%= course.title %></h3>

@@ -1,4 +1,4 @@
-<div class="course-banner" style="background-image: url(<%= @course.photos.attached? ? cl_image_path(@course.photos[0].key) : '' %>);">
+<div class="course-banner" style="background-image: url(<%= @course.photos.attached? ? cl_image_path(@course.photos[0].key) : 'https://picsum.photos/300/300' %>);">
 </div>
 <div class="container">
   <h1><%= @course.title %></h1>
