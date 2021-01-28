@@ -1,6 +1,9 @@
+<div class="course-banner" style="background-image: url(<%= @course.photos.attached? ? cl_image_path(@course.photos[0].key) : '' %>);">
+</div>
 <div class="container">
   <h1><%= @course.title %></h1>
   <p><%= @course.description%></p>
+  <p>By Chef <%= @course.user.first_name %></p>
   <p><%= @course.price %></p>
   <%= link_to "Book this course!", new_course_booking_path(@course) %>
 </div>

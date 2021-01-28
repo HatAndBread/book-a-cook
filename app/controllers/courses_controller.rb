@@ -12,9 +12,6 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    puts "*******************************************************************"
-    p @course.photos.attached?
-    puts "*******************************************************************"
     authorize @course
   end
 
