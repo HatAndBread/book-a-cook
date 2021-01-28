@@ -21,6 +21,9 @@ end
   file = URI.open('https://source.unsplash.com/featured/?dinner,meal')
   course.photos.attach(io: file, filename: "#{rand(1..100000)}.png", content_type: 'image/png')
   course.save
+  course.ingredient_list = [Course::INGREDIENTS.sample]
+  course.category_list = [Course::CATEGORIES.sample]
+  course.save
   puts "Randomly generated course:"
   p course
 end
