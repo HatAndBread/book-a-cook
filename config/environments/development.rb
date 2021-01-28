@@ -52,6 +52,9 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = false
 
+  config.assets.precompile += %w( grill.mp4 )
+  config.assets.precompile += %w( sprinkle.mp4 )
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
