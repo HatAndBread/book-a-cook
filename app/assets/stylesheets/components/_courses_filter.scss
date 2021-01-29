@@ -2,7 +2,7 @@
   background-image: url('oriental.png');
 }
 
-.cont {
+.courses {
   width: 85%;
   margin: 0 auto;
 }
@@ -74,10 +74,11 @@
   border-radius: 27px;
   padding: 8px 16px;
   box-shadow: none;
-  border: 2px solid #d0bd54;
   margin: 0px 20px;
+  font-weight: 300;
   &:hover {
-    border-color: white;
-    color: white;
+    border: 2px solid #d0bd54;
+    text-decoration: none;
+    color: #d9bd54;
   }
 }

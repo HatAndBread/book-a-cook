@@ -22,17 +22,18 @@
     </div>
   </div>
 
-  <div class="cont">
-    <div class="courses">
-      <% @courses.each do |course| %>
-        <%= link_to  course_path(course) do%>
-          <div class="course_card" style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" >
-            <div class="text-overlay">
-              <div class="c-title">
-                <h3><%= course.title %></h3>
-                <p><%= course.user.first_name %></p>
-              </div>
-              <div>
+ 
+  <div class="courses">
+    <% @courses.each do |course| %>
+      <%= link_to  course_path(course) do%>
+        <div class="course_card" style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" >
+          <div class="text-overlay">
+            <div class="c-title">
+              <h3><%= course.title %></h3>
+              <p>by Chef <%= course.user.first_name %></p>
+            </div>
+            <div class="footer">
+              <div class="tags">
                 <% course.category_list.each do |t| %>
                   <p class="tag"><%= t %></p>
                 <% end %>
@@ -40,10 +41,14 @@
                   <p class="tag"><%= t %></p>
                 <% end %>
               </div>
+              <div class="icons">
+                <i class="fas fa-share"></i>
+                <i class="far fa-heart"></i>
+              </div>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
