@@ -1,20 +1,22 @@
-<div class="container">
-  <h1>All courses</h1>
-  <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>
-    <%= select_tag :categories, options_for_select(Course::CATEGORIES) %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Example select</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <% Course::INGREDIENTS.each do |t| %>
-          <option><%= t %></option>
-        <% end %>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="cont">
+  <div class="header">
+    <h2>Browse Through Our Chefs Best Creations For Inspiration</h2>
+    <p>or filter results according to your favourite cuisine.</p>
+  </div>
+  <div class="search-filters">
+    <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>
+      <div class="form-group">
+      <%= label_tag 'category', "Select a cuisine:" %>
+      <%= select_tag :categories, options_for_select(Course::CATEGORIES), include_blank: "Select", class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= label_tag 'ingredients', "Other options:", for: 'inputCategory' %>
+      <%= select_tag :categories, options_for_select(Course::INGREDIENTS), include_blank: "Select", class: 'form-control' %>
+      </div>
+      <%= submit_tag "Apply", class: "btn btn-primary" %>
+      <%= link_to "Reset", courses_path, class: "btn btn-danger" %>
+    <% end %>
+  </div>
   <div class="courses">
     <% @courses.each do |course| %>
       <%= link_to  course_path(course) do%>
