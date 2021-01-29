@@ -1,0 +1,83 @@
+.background {
+  background-image: url('oriental.png');
+}
+
+.cont {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.header {
+  background-image: url('courses-header.jpg');
+  background-position: bottom;
+  background-size: cover;
+  .header-overlay {
+    background: rgb(232,225,60);
+    background: linear-gradient(180deg, rgba(232,225,60,0) 0%, rgba(47,50,48,1) 100%);
+  }
+}
+.header-title {
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+  p {
+    font-size: 28px;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 40px;
+  }
+}
+
+.search-filters {
+  padding: 30px 0 0px 0;
+  justify-content: center;
+}
+
+.form-inline {
+  flex-direction: column;
+  .form-group {
+    color: #d9bd54;
+    font-family: 'Poppins';
+    .label {
+      font-size: 22px;
+      font-weight: 400;
+      padding: 0 8px 0 50px;
+    }
+  }
+}
+
+.buttons {
+  padding: 50px 0;
+}
+
+.search-btn {
+  font-family: 'Poppins';
+  background: #d9bd54;
+  color: white;
+  font-size: 20px;
+  border-radius: 27px;
+  padding: 8px 16px;
+  box-shadow: none;
+  border: none;
+  margin: 0px 20px;
+  &:hover {
+    background-color: $dark-green;
+  }
+}
+
+.reset-btn {
+  font-family: 'Poppins';
+  color: #d9bd54;
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 27px;
+  padding: 8px 16px;
+  box-shadow: none;
+  border: 2px solid #d0bd54;
+  margin: 0px 20px;
+  &:hover {
+    border-color: white;
+    color: white;
+  }
+}
