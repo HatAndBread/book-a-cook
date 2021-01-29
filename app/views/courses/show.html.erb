@@ -1,9 +1,39 @@
-<div class="course-banner" style="background-image: url(<%= @course.photos.attached? ? cl_image_path(@course.photos[0].key) : 'https://picsum.photos/300/300' %>);">
-</div>
-<div class="container">
-  <h1><%= @course.title %></h1>
-  <p><%= @course.description%></p>
-  <p>By Chef <%= @course.user.first_name %></p>
-  <p><%= @course.price %></p>
-  <%= link_to "Book this course!", new_course_booking_path(@course) %>
+<div class="course-body">
+  <div class="course-banner" style="background-image: url(<%= @course.photos.attached? ? cl_image_path(@course.photos[0].key) : 'https://picsum.photos/300/300' %>)">
+    <div class="course-banner-cover">
+      <h1><%= @course.title %></h1>
+      <h3>By Chef <%= @course.user.first_name %></h3>
+    </div>
+  </div>
+  <div class="container">
+    <div class="course-info-container">
+      <div class="course-info-card">
+        <h3 class="title">Pricing Info $$</h3>
+        <p>Starting from <%= @course.price%>$ per person</p>
+      </div>
+      <div class="course-info-card">
+        <h3 class="title">Course Description</h3>
+        <p><%= @course.description%></p>
+      </div>
+      <div class="course-info-card">
+        <h3 class="title">Our Chef</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</p>
+      </div>
+      <div class="reviews">
+        <h1 class="title">Our Customers Say...</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</p>
+      </div>
+    </div>
+    <div class="booking-form">
+      <h3>Contact Chef <%= @course.user.first_name %> Right Away</h3>
+      <p>Fill in your details and send a request to our Chef</p>
+      <%= simple_form_for course_bookings_url(@course) do |f| %>
+        <%= f.input :location, placeholder: 'Tokyo', label: "The Where" %>
+        <%= f.input :attendees, as: :numeric, label: 'The Who', input_html: { min: 1, max: 100, placeholder: 'Attendees' } %>
+        <%= f.input :start_time, as: :datetime, html5: true%>
+        <%= f.input :end_time, as: :datetime, html5: true%>
+        <%= f.submit "Send a Request", class: "submit-btn" %>
+      <% end %>
+    </div>
+  </div>
 </div>
