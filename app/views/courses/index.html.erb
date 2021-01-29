@@ -17,22 +17,24 @@
   </form>
   <div class="courses">
     <% @courses.each do |course| %>
-      <div class="course_card" style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" >
-        <div class="text-overlay">
-          <div class="c-title">
-            <h3><%= course.title %></h3>
-            <p><%= course.user.first_name %></p>
-          </div>
-          <div>
-            <% course.category_list.each do |t| %>
-              <p class="tag"><%= t %></p>
-            <% end %>
-            <% course.ingredient_list.each do |t| %>
-              <p class="tag"><%= t %></p>
-            <% end %>
+      <%= link_to  course_path(course) do%>
+        <div class="course_card" style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" >
+          <div class="text-overlay">
+            <div class="c-title">
+              <h3><%= course.title %></h3>
+              <p><%= course.user.first_name %></p>
+            </div>
+            <div>
+              <% course.category_list.each do |t| %>
+                <p class="tag"><%= t %></p>
+              <% end %>
+              <% course.ingredient_list.each do |t| %>
+                <p class="tag"><%= t %></p>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
