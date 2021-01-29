@@ -1,5 +1,5 @@
 
-puts "Erasing old junk ✨💃"
+puts "Erasing old junk... ✨💃"
 User.destroy_all
 10.times do
   user = User.new
@@ -12,14 +12,16 @@ User.destroy_all
   p user
 end
 
-30.times do
+10.times do
   course = Course.new
   course.price = rand(30...100)
   course.description = Faker::Food.description
   course.title = Faker::Food.dish
   course.user = User.all.sample
-  file = URI.open('https://source.unsplash.com/featured/?dinner,meal')
-  course.photos.attach(io: file, filename: "#{rand(1..100000)}.png", content_type: 'image/png')
+  rand(2..4).times do
+    file = URI.open('https://source.unsplash.com/featured/?delicious,food')
+    course.photos.attach(io: file, filename: "#{rand(1..100000)}.png", content_type: 'image/png')
+  end
   course.save
   course.ingredient_list = [Course::INGREDIENTS.sample]
   course.category_list = [Course::CATEGORIES.sample]
