@@ -1,5 +1,5 @@
 .background {
-  background-image: url('oriental.png');
+  background-image: asset-url('oriental.png');
 }
 
 .courses {
@@ -8,12 +8,12 @@
 }
 
 .header {
-  background-image: url('courses-header.jpg');
+  background-image: asset-url('courses-header.jpg');
   background-position: bottom;
   background-size: cover;
   .header-overlay {
-    background: rgb(232,225,60);
-    background: linear-gradient(180deg, rgba(232,225,60,0) 0%, rgba(47,50,48,1) 100%);
+    background: rgb(232, 225, 60);
+    background: linear-gradient(180deg, rgba(232, 225, 60, 0) 0%, rgba(47, 50, 48, 1) 100%);
   }
 }
 .header-title {
