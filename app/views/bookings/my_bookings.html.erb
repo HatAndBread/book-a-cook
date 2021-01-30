@@ -1,11 +1,25 @@
 <div class="my_bookings">
   <div class="container">
-    <h2>Find Details About Your Upcoming Bookings Below</h2>
-    <% @bookings.each do |booking| %>
-      <div class="card">
-        <h3><%= booking.course.title %></h3>
-        Where? <%= booking.location %> When? <%= booking.start_time %>
+    <div class="bookings-container">
+      <div class="booking-title">
+        <h2>Find Details About Your Upcoming Bookings Below</h2>
+        <p>Lorem ipsum</p>
       </div>
-    <% end %>
+      <div class='c-booking'>
+        <% @bookings.each do |booking| %>
+          <div class="card">
+            <div class="where">
+              <h3><%= booking.course.title %></h3>
+              <p>Where?</p> 
+            </div>
+            <div class="when">
+            <p><%= booking.location %></p> 
+            <p>When?</p>
+            <p><%= booking.start_time %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
