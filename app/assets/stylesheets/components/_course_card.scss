@@ -23,9 +23,14 @@
 
 .c-link {
   margin: 0;
+  transition: transform .5s; /* Animation */
   &:hover {
     text-decoration: none;
     margin: 0;
+    transform: scale(1.05);
+    h3 {
+    color: $dark-green;
+    }
   }
 }
 
@@ -74,3 +79,11 @@
     margin: 0 5px;
   }
 }
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  .zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+}
+
