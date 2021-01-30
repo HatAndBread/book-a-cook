@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding: 4px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -28,7 +29,5 @@
 }
 
 .nav-item {
-  .link {
-    color: $dark-green;
-  }
+  font-size: 20px;
 }
