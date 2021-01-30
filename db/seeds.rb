@@ -18,11 +18,13 @@ end
   course.description = Faker::Food.description
   course.title = Faker::Food.dish
   course.user = User.all.sample
-  rand(2..4).times do
-    file = URI.open('https://source.unsplash.com/featured/?delicious,food')
-    course.photos.attach(io: file, filename: "#{rand(1..100000)}.png", content_type: 'image/png')
-  end
-  course.save
+  first_word = course.title.split(' ')[0]
+  file = URI.open("https://source.unsplash.com/featured/?#{first_word},cooking")
+  file_two = URI.open("https://source.unsplash.com/featured/?#{first_word},meal")
+  file_three = URI.open("https://source.unsplash.com/featured/?#{first_word},delicious")
+  course.photos.attach(io: file, filename: "#{rand(1..1000000)}.png", content_type: 'image/png')
+  course.photos.attach(io: file_two, filename: "#{rand(1..1000000)}.png", content_type: 'image/png')
+  course.photos.attach(io: file_three, filename: "#{rand(1..1000000)}.png", content_type: 'image/png')
   course.ingredient_list = [Course::INGREDIENTS.sample]
   course.category_list = [Course::CATEGORIES.sample]
   course.save
