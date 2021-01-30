@@ -12,7 +12,7 @@ User.destroy_all
   puts "Randomly generated user:"
   p user
 end
-
+# a
 10.times do
   course = Course.new
   course.price = rand(30...100)
