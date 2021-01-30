@@ -1,8 +1,18 @@
 <div class="course-body">
   <div class="course-banner" style="background-image: url(<%= @course.photos.attached? ? cl_image_path(@course.photos[0].key) : 'https://picsum.photos/300/300' %>)">
     <div class="course-banner-cover">
-      <h1><%= @course.title %></h1>
-      <h3>By Chef <%= @course.user.first_name %></h3>
+      <div class="course-banner-info">
+        <h1><%= @course.title %></h1>
+        <h3>By Chef <%= @course.user.first_name %></h3>
+        <div class="tags">
+          <% @course.category_list.each do |t| %>
+            <p class="tag"><%= t %></p>
+          <% end %>
+          <% @course.ingredient_list.each do |t| %>
+            <p class="tag"><%= t %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container">
@@ -21,7 +31,13 @@
       </div>
       <div class="reviews">
         <h1 class="title">Our Customers Say...</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</p>
+        <div class="review">
+          <div style="display: flex; justify-content: flex-start;">
+            <h5> Nancy</h5>
+            <h6>On Thursday, 25th October 1864</h6>
+          </div>
+          <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</div>
+        </div>
       </div>
     </div>
     <div class="photo-form-container">
@@ -62,3 +78,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "course-show" %>

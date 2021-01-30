@@ -1,5 +1,5 @@
 .course-body {
-  background-image: asset-url('seigaiha.png');
+  background-image: asset-url('oriental.png');
   min-height: 100vh;
   .container {
     display: flex;
@@ -14,15 +14,19 @@
   background-size: cover;
   margin-bottom: 32px;
 }
-
-.course-banner-cover {
+.course-banner-info {
   position: relative;
   display: flex;
   padding: 32px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(40, 40, 40, 0.7));
+  top: 40%;
+  height: 60%;
+}
+
+.course-banner-cover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.2), rgba(40, 40, 40, 0.9));
   width: 100%;
   height: 100%;
 }
@@ -45,6 +49,18 @@
 .reviews {
   h1 {
     color: $dark-green;
+  }
+  .review {
+    background-color: white;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  h5 {
+    color: $dark-green;
+  }
+  h6 {
+    color: $dark-green;
+    margin-left: 8px;
   }
 }
 
@@ -99,6 +115,35 @@
       object-fit: cover;
       height: 30vh;
       border-radius: 4px;
+    }
+  }
+}
+
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .course-banner-info {
+    top: 10%;
+    height: 90%;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .course-banner-info {
+    h1 {
+      font-size: 6vw;
+    }
+    h3 {
+      font-size: 4vw;
+    }
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .course-banner-info {
+    h1 {
+      font-size: 6vh;
+    }
+    h3 {
+      font-size: 4vh;
     }
   }
 }
