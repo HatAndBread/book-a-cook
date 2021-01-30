@@ -21,6 +21,14 @@
   }
 }
 
+.c-link {
+  margin: 0;
+  &:hover {
+    text-decoration: none;
+    margin: 0;
+  }
+}
+
 .text-overlay {
   width: 100%;
   height: 190px;
