@@ -1,22 +1,28 @@
-<div class="cont">
+<div class="background">
   <div class="header">
-    <h2>Browse Through Our Chefs Best Creations For Inspiration</h2>
-    <p>or filter results according to your favourite cuisine.</p>
-  </div>
-  <div class="search-filters">
-    <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>
-      <div class="form-group">
-      <%= label_tag 'category', "Select a cuisine:" %>
-      <%= select_tag :categories, options_for_select(Course::CATEGORIES), include_blank: "Select", class: 'form-control' %>
+    <div class="header-overlay">
+      <div class="header-title">
+        <h2>Browse Through Our Chefs Best Creations For Inspiration</h2>
+        <p>or filter results according to your favourite cuisine.</p>
       </div>
-      <div class="form-group">
-      <%= label_tag 'ingredients', "Other options:", for: 'inputCategory' %>
-      <%= select_tag :categories, options_for_select(Course::INGREDIENTS), include_blank: "Select", class: 'form-control' %>
+      <div class="search-filters form-row">
+        <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>
+          <div class="form-group">
+            <%= label_tag 'category', "Pick your fancy:", class: 'label' %>
+            <%= select_tag :categories, options_for_select(Course::CATEGORIES), include_blank: "Select a cuisine", class: 'form-control' %>
+            <%= label_tag 'ingredients', "For the more sophisticated:", class: 'label' %>
+            <%= select_tag :categories, options_for_select(Course::INGREDIENTS), include_blank: "More options in here", class: 'form-control' %>
+          </div>
+          <div class="buttons">
+            <%= submit_tag "Search", class: "search-btn" %>
+            <%= link_to "Cancel", courses_path, class: "reset-btn" %>
+          </div>
+        <% end %>
       </div>
-      <%= submit_tag "Apply", class: "btn btn-primary" %>
-      <%= link_to "Reset", courses_path, class: "btn btn-danger" %>
-    <% end %>
+    </div>
   </div>
+
+ 
   <div class="courses">
     <% @courses.each do |course| %>
       <%= link_to  course_path(course) do%>
@@ -24,15 +30,21 @@
           <div class="text-overlay">
             <div class="c-title">
               <h3><%= course.title %></h3>
-              <p><%= course.user.first_name %></p>
+              <p>by Chef <%= course.user.first_name %></p>
             </div>
-            <div>
-              <% course.category_list.each do |t| %>
-                <p class="tag"><%= t %></p>
-              <% end %>
-              <% course.ingredient_list.each do |t| %>
-                <p class="tag"><%= t %></p>
-              <% end %>
+            <div class="footer">
+              <div class="tags">
+                <% course.category_list.each do |t| %>
+                  <p class="tag"><%= t %></p>
+                <% end %>
+                <% course.ingredient_list.each do |t| %>
+                  <p class="tag"><%= t %></p>
+                <% end %>
+              </div>
+              <div class="icons">
+                <i class="fas fa-share"></i>
+                <i class="far fa-heart"></i>
+              </div>
             </div>
           </div>
         </div>
