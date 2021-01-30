@@ -67,7 +67,7 @@
       <div class="booking-form">
         <h3>Contact Chef <%= @course.user.first_name %> Right Away</h3>
         <p>Fill in your details and send a request to our Chef</p>
-        <%= simple_form_for course_bookings_url(@course) do |f| %>
+        <%= simple_form_for [@course, @booking] do |f| %>
           <%= f.input :location, placeholder: 'Tokyo', label: "The Where" %>
           <%= f.input :attendees, as: :numeric, label: 'The Who', input_html: { min: 1, max: 100, placeholder: 'Attendees' } %>
           <%= f.input :start_time, as: :datetime, html5: true%>

@@ -29,31 +29,35 @@ h1.home {
   color: white;
   font-family: Poppins;
   font-weight: bold;
-  font-size: 50px;
-  padding-top: 18.5vh;
-  padding-right: 51vw;
-  margin-left: 10vw;
+  font-size: 60px;
+  padding-top: 17.5vh;
+  padding-right: 45vw;
+  margin-left: 7vw;
   z-index: 1;
 }
 
 p.description {
   color: white;
   font-family: Poppins;
-  font-weight: 500;
-  font-size: 20.4px;
-  padding-right: 50vw;
-  margin-left: 10vw;
+  font-weight: 200;
+  font-size: 24.4px;
+  padding-right: 46vw;
+  margin-left: 7vw;
   z-index: 1;
 }
 
 .banner-button {
   background-color: #D9BD54;
   width: 190px;
-  height: 36px;
-  border-radius: 50px;
-  margin-left: 9.5vw;
+  height: 50px;
+  border-radius: 27px;
+  margin-left: 7vw;
   z-index: 1;
-  padding-top: 0.5vh;
+  padding-top: 1.3vh;
+
+  &:hover {
+    background-color: $dark-green;
+  }
 
   a {
     display: flex;
@@ -81,7 +85,7 @@ p.description {
 
 //Info Under Banner
 .landing-info {
-  height: 100vh;
+  height: 110vh;
   width: 98.99vw;
   background-image: asset-url("oriental.png");
   display: flex;
@@ -97,6 +101,7 @@ p.description {
   .info-header {
     display: flex;
     align-items: center;
+    margin-top: 3vh;
 
     .logo-info {
       width: 90px;
