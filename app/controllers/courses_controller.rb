@@ -4,9 +4,8 @@ class CoursesController < ApplicationController
   def index
     @courses = policy_scope(Course).order(created_at: :desc)
     authorize @courses
-    @search = params["search"]
-    if params[:categories].present?
-      @courses = Course.tagged_with(params[:categories])
+    if params[:categories].present? || params[:ingredients].present?
+      @courses = Course.tagged_with([params[:categories], params[:ingredients]])
     end
   end
 

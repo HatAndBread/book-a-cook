@@ -9,9 +9,9 @@
         <%= form_tag courses_path, method:"GET", class: 'form-inline' do %>
           <div class="form-group">
             <%= label_tag 'category', "Pick your fancy:", class: 'label' %>
-            <%= select_tag :categories, options_for_select(Course::CATEGORIES), include_blank: "Select a cuisine", class: 'form-control' %>
+            <%= select_tag :categories, options_for_select(Course::CATEGORIES), include_blank: "Select an option", class: 'form-control' %>
             <%= label_tag 'ingredients', "For the more sophisticated:", class: 'label' %>
-            <%= select_tag :categories, options_for_select(Course::INGREDIENTS), include_blank: "More options in here", class: 'form-control' %>
+            <%= select_tag :ingredients, options_for_select(Course::INGREDIENTS), include_blank: "More options in here", class: 'form-control' %>
           </div>
           <div class="buttons">
             <%= submit_tag "Search", class: "search-btn" %>
