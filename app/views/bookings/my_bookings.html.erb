@@ -1,23 +1,11 @@
-<h2>My Bookings</h2>
-
-<ol>
-  <% @bookings.each do |booking| %>
-  <li><p><%= booking.location %> - <%= booking.start_time %> - <%= booking.end_time %></p></li>
-  <% end %>
-</ol>
-
-
-<!--
-  create_table "bookings", force: :cascade do |t|
-    t.boolean "status"
-    t.integer "attendees"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string "location"
-    t.bigint "user_id", null: false
-    t.bigint "course_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_bookings_on_course_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end -->
+<div class="my_bookings">
+  <div class="container">
+    <h2>Find Details About Your Upcoming Bookings Below</h2>
+    <% @bookings.each do |booking| %>
+      <div class="card">
+        <h3><%= booking.course.title %></h3>
+        Where? <%= booking.location %> When? <%= booking.start_time %>
+      </div>
+    <% end %>
+  </div>
+</div>
