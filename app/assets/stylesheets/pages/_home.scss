@@ -31,7 +31,7 @@ h1.home {
   font-weight: bold;
   font-size: 60px;
   padding-top: 17.5vh;
-  padding-right: 46vw;
+  padding-right: 45vw;
   margin-left: 7vw;
   z-index: 1;
 }
@@ -49,11 +49,15 @@ p.description {
 .banner-button {
   background-color: #D9BD54;
   width: 190px;
-  height: 36px;
-  border-radius: 50px;
+  height: 50px;
+  border-radius: 27px;
   margin-left: 7vw;
   z-index: 1;
-  padding-top: 0.5vh;
+  padding-top: 1.3vh;
+
+  &:hover {
+    background-color: $dark-green;
+  }
 
   a {
     display: flex;
