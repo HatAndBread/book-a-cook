@@ -13,13 +13,13 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link text-success" %>
         </li>
         <li class="nav-item">
-          <%= link_to "How it Works", '#how-does-it-work', class: "nav-link" %>
+          <%= link_to "How it Works", '#how-does-it-work', class: "nav-link text-success" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Courses", courses_path, class: "nav-link" %>
+          <%= link_to "Courses", courses_path, class: "nav-link text-success" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -30,7 +30,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link text-success" %>
         </li>
       <% end %>
     </ul>
