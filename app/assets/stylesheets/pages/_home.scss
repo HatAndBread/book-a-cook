@@ -96,6 +96,7 @@ p.description {
   h2 {
     font-family: Poppins;
     font-weight: bold;
+    color: $dark-green;
   }
 
   .info-header {
@@ -108,7 +109,7 @@ p.description {
     }
 
     .info-header-bar {
-      background-color: black;
+      background-color: $dark-green;
       height: 7px;
       width: 77px;
       border-radius: 50px;
@@ -136,7 +137,7 @@ p.description {
     position: absolute;
     height: 125px;
     width: 125px;
-    background-color: black;
+    background-color: $dark-green;
     border-radius: 50%;
     display: flex;
     justify-content: center;
