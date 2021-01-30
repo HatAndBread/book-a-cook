@@ -21,8 +21,6 @@
       </div>
     </div>
   </div>
-
- 
   <div class="courses">
     <% @courses.each do |course| %>
       <%= link_to  course_path(course), class: 'c-link' do%>
@@ -56,3 +54,4 @@
     <% end %>
   </div>
 </div>
+<%= javascript_pack_tag "courses-index" %>
