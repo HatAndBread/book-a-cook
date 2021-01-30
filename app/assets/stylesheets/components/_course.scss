@@ -1,6 +1,7 @@
 .course-body {
   background-image: asset-url('oriental.png');
   min-height: 100vh;
+  padding-bottom: 32px;
   .container {
     display: flex;
     flex-direction: row;

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
   resources :courses, only: [ :index, :show ] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [ :create]
   end
 
   get "my-bookings", to: "bookings#my_bookings", as: :my_bookings
