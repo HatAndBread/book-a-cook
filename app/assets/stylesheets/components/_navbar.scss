@@ -11,6 +11,18 @@
   width: 40px;
 }
 
-#nav-logo {
-  width: 60px;
+.brand {
+  display: flex;
+  align-items: center;
+  font-family: Yeon Sung;
+
+  #nav-logo {
+    width: 60px;
+    margin-left: 5.3vw;
+  }
+
+  p {
+    margin: 0;
+    font-size: 30px;
+  }
 }
