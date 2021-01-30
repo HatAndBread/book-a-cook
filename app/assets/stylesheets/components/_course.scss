@@ -83,6 +83,10 @@
     border-style: none;
     border-radius: 4px;
   }
+
+  .submit-btn:hover {
+    background-color: $dark-green;
+  }
 }
 
 .photo-form-container {
