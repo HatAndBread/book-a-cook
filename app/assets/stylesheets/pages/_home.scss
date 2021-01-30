@@ -83,7 +83,7 @@ p.description {
 .landing-info {
   height: 100vh;
   width: 98.99vw;
-  background-image: asset-url("seigaiha.png");
+  background-image: asset-url("oriental.png");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,5 +108,45 @@ p.description {
       width: 77px;
       border-radius: 50px;
     }
+  }
+}
+
+//Info cards undder banner
+.info-cards-container {
+  width: 98vw;
+  margin: 10vh;
+  padding: 0 5vw;
+  display: flex;
+  justify-content: space-around;
+
+  .card {
+    width: 277px;
+    height: 327px;
+    background-color: transparent;
+    border-style: none;
+    display: flex;
+    align-items: center;
+  }
+  .card-icon {
+    position: absolute;
+    height: 125px;
+    width: 125px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+  }
+
+  .card-info {
+    background-color: white;
+    width: 19vw;
+    height: 39vh;
+    margin-top: 9vh;
+    border-radius: 16px;
+    text-align: center;
+    padding-top: 5vw;
   }
 }
