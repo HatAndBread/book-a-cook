@@ -6,7 +6,7 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
     <% @bookings.each do |booking| %>
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= cl_image_tag(booking.course.photos[0].key, :width => 200, :height => 400) %>
         <div class="card-product-infos">
           <h2><%= booking.course.title %></h2>
           <p><%= booking.course.description %></p>
