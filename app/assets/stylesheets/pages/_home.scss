@@ -2,22 +2,22 @@
 
 // Banner
 .home-video-wrapper {
-  height: 88vh;
+  height: 89vh;
   display: flex;
   flex-direction: column;
 }
 
 .dark-cover {
-  width: 98.99vw;
-  height: 88vh;
+  width: 100vw;
+  height: 89vh;
   position: absolute;
   object-fit: cover;
   background-color: rgba(0,0,0,0.4);
 }
 
 .home_video {
-  width: 98.99vw;
-  height: 88vh;
+  width: 100vw;
+  height: 89vh;
   position: absolute;
   object-fit: cover;
   top: 0;
@@ -86,7 +86,7 @@ p.description {
 //Info Under Banner
 .landing-info {
   height: 110vh;
-  width: 98.99vw;
+  width: 100vw;
   background-image: asset-url("oriental.png");
   display: flex;
   flex-direction: column;
