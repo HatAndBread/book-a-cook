@@ -1,25 +1,43 @@
-<div class="my_bookings">
-  <div class="container">
-    <div class="bookings-container">
-      <div class="booking-title">
-        <h2>Find Details About Your Upcoming Bookings Below</h2>
-        <p>Lorem ipsum</p>
+<div class="my-bookings-container">
+  <div class="user-profile">
+  </div>
+  <div class="user-bookings">
+    <h3>Find details about your upcoming bookings below</h3>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
+    <% @bookings.each do |booking| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= booking.course.title %></h2>
+          <p><%= booking.course.description %></p>
+        </div>
       </div>
-      <div class='c-booking'>
-        <% @bookings.each do |booking| %>
-          <div class="card">
-            <div class="where">
-              <h3><%= booking.course.title %></h3>
-              <p>Where?</p> 
-            </div>
-            <div class="when">
-            <p><%= booking.location %></p> 
-            <p>When?</p>
-            <p><%= booking.start_time %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
+
+
+
+<!--   create_table "bookings", force: :cascade do |t|
+    t.integer "attendees"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "location"
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status", default: "pending"
+    t.index ["course_id"], name: "index_bookings_on_course_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end -->
+
+  <!-- create_table "courses", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_courses_on_user_id"
+  end -->
