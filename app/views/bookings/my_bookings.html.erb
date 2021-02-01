@@ -3,13 +3,15 @@
   </div>
   <div class="user-bookings">
     <h3>Find details about your upcoming bookings below</h3>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
+    <p style="margin-bottom: 30px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
     <% @bookings.each do |booking| %>
       <div class="card-product">
         <%= cl_image_tag(booking.course.photos[0].key, :width => 200, :height => 400) %>
         <div class="card-product-infos">
           <h2><%= booking.course.title %></h2>
+          <p><%= booking.start_time %></p>
           <p><%= booking.course.description %></p>
+          <p><%= booking.status.capitalize %></p>
         </div>
       </div>
     <% end %>
