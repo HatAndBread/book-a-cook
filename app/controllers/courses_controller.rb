@@ -25,13 +25,13 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
-    @course.user = current_user
     p @course
     authorize @course
   end
 
   def create
-    @course = Course.new
+    @course = Course.new(course_params)
+    @course.user = current_user
     authorize @course
 
     puts @course.valid?
