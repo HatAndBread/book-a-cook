@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   end
 
   get "my-bookings", to: "bookings#my_bookings", as: :my_bookings
+  get "my-courses", to: "courses#my_courses", as: :my_courses
+
   get "my-jobs", to: "courses#my_jobs", as: :my_jobs
   get "tagged", to: "courses#tagged", as: :tagged
+
 
 end

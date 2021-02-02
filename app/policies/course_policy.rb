@@ -10,6 +10,11 @@ class CoursePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def my_courses?
+    true
+  end
+
   def create?
     user
   end

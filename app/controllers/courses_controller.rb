@@ -3,10 +3,10 @@ class CoursesController < ApplicationController
 
   def index
     @courses = policy_scope(Course).order(created_at: :desc)
-    authorize @courses
     if params[:categories].present? || params[:ingredients].present?
       @courses = Course.tagged_with([params[:categories], params[:ingredients]])
     end
+    authorize @courses
   end
 
   def show
@@ -15,6 +15,12 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     @booking.course = @course
     authorize @course
+  end
+
+
+  def my_courses
+    @my_courses = Course.where(user: current_user).order(created_at: :ASC)
+    authorize @my_courses
   end
 
   def new
@@ -35,7 +41,7 @@ class CoursesController < ApplicationController
     else
       render :new
     end
-  end
+
 
   private
 

@@ -7,7 +7,6 @@ User.destroy_all
   user.last_name = Faker::Name.last_name
   user.email = Faker::Internet.email
   user.password = Faker::Internet.password
-  user.address = Faker::Address.full_address
   user.save
   puts "Randomly generated user:"
   p user

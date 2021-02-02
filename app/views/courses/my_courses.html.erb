@@ -1,0 +1,16 @@
+<div class="container">
+  <% if current_user.courses.present? %>
+    <% @my_courses.each do |course| %>
+          <div class="card-product">
+            <%= cl_image_tag(booking.course.photos[0].key, :width => 200, :height => 400) %>
+            <div class="card-product-infos">
+              <h2><%= course.title %></h2>
+            </div>
+          </div>
+    <% end %>
+  <% else %>
+    <div class="container">
+      <h2>You haven't created any courses yet!</h2>
+    </div>
+  <% end %>
+</div>
