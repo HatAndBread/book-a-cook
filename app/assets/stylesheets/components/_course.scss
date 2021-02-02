@@ -52,9 +52,24 @@
     color: $dark-green;
   }
   .review {
+    overflow-x: hidden;
+    height: 40vh;
     background-color: white;
     border-radius: 4px;
     padding: 16px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    .review-text {
+      background-color: white;
+      height: 15vh;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+  }
+  .review::-webkit-scrollbar {
+    display: none;
   }
   h5 {
     color: $dark-green;

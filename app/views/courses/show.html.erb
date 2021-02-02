@@ -32,11 +32,15 @@
       <div class="reviews">
         <h1 class="title">Our Customers Say...</h1>
         <div class="review">
-          <div style="display: flex; justify-content: flex-start;">
-            <h5> Nancy</h5>
-            <h6>On Thursday, 25th October 1864</h6>
-          </div>
-          <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</div>
+          <% @course.reviews.each do |review| %>
+            <div class="review-text">
+              <p><%= review.content %></p>
+            </div>
+          <% end %>
+        </div>
+        <div class="review-text-box">
+          <h4>Write a Review!</h4>
+          <%= render 'components/review_text' %>
         </div>
       </div>
     </div>
