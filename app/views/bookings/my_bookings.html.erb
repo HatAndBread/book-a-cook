@@ -1,6 +1,13 @@
 <div class="my-bookings-container">
+
   <div class="user-profile">
+    <div class="logo">
+      <div class="bar"></div>
+      <%= image_tag "chefvector.png" %>
+      <div class="bar"></div>
+    </div>
   </div>
+
   <div class="user-bookings">
     <h3>Find details about your upcoming bookings below</h3>
     <p style="margin-bottom: 30px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
@@ -11,11 +18,12 @@
           <h2><%= booking.course.title %></h2>
           <p><%= booking.start_time %></p>
           <p><%= booking.course.description %></p>
-          <p><%= booking.status.capitalize %></p>
+          <p class="status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>
 
 
