@@ -8,3 +8,19 @@
 @import 'courses_filter';
 @import 'footer';
 @import 'my_bookings_card';
+@import 'review_text_box';
+@import 'new_course';
+
+.standard-btn {
+  background-color: #d9bd54;
+  color: white;
+  padding: 8px;
+  border-style: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.standard-btn:hover {
+  background-color: $dark-green;
+}
+
