@@ -1,6 +1,6 @@
-import c from 'chinpunkanpun';
+// import c from 'chinpunkanpun';
 
-const reviews = Array.from(document.querySelectorAll('.review-text'));
-reviews.forEach((review) => {
-  review.innerText = `${c.sentence()} ${c.sentence()} ${c.sentence()}`;
-});
+// const reviews = Array.from(document.querySelectorAll('.review-text'));
+// reviews.forEach((review) => {
+//   review.innerText = `${c.sentence()} ${c.sentence()} ${c.sentence()}`;
+// });

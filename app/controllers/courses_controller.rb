@@ -11,9 +11,30 @@ class CoursesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
     @course = Course.find(params[:id])
     @booking.course = @course
     authorize @course
+  end
+
+  def new
+    @course = Course.new
+    @course.user = current_user
+    p @course
+    authorize @course
+  end
+
+  def create
+    @course = Course.new
+    authorize @course
+
+    puts @course.valid?
+    @course.save!
+    if @course.save
+      redirect_to course_path(@course)
+    else
+      render :new
+    end
   end
 
   private
