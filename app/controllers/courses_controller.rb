@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
     @course = Course.find(params[:id])
     @booking.course = @course
     authorize @course

@@ -5,10 +5,13 @@ Rails.application.routes.draw do
 
 
   resources :courses, only: [ :index, :show, :new, :create ] do
-    resources :bookings, only: [ :create]
+    resources :bookings, only: [ :create ]
+    resources :reviews, only: [ :create ]
+
   end
 
   get "my-bookings", to: "bookings#my_bookings", as: :my_bookings
+  get "my-jobs", to: "courses#my_jobs", as: :my_jobs
   get "tagged", to: "courses#tagged", as: :tagged
 
 end
