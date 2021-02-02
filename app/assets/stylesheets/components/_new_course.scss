@@ -1,0 +1,19 @@
+.new-course-body {
+  background-image: asset-url('oriental.png');
+  min-height: 80vh;
+  form {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  textarea {
+    min-height: 30vh;
+  }
+  input[type='number'] {
+    width: 100px;
+  }
+}
