@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   get "my-bookings", to: "bookings#my_bookings", as: :my_bookings
-  get "tagged", to: "courses#tagged", as: :tagged
+  get "my-courses", to: "courses#my_courses", as: :my_courses
 
 end

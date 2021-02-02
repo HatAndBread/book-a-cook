@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_111748) do
+ActiveRecord::Schema.define(version: 2021_02_02_114611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2021_02_02_111748) do
     t.integer "attendees"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "location"
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
