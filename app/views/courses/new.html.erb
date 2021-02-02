@@ -1,0 +1,19 @@
+<div class="new-course-body">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <%= simple_form_for @course do |f| %>
+          <%= f.label :title, "Title of course" %>
+          <%= f.text_field :title %>
+          <%= f.label :description, "Description of course" %>
+          <%= f.text_area :description %>
+          <%= f.label :price, "Select a price" %>
+          <%= f.number_field :price, {min: 1, value: 1 }%>
+          <%= f.input :ingredient_list, label:  "Select all ingredients that apply", as: :check_boxes, collection: Course::INGREDIENTS %>
+          <%= f.input :category_list, label: "Select a category", collection: Course::CATEGORIES %>
+          <%= f.submit "Create Course", class: "standard-btn"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
