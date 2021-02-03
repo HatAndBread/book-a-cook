@@ -1,16 +1,35 @@
-<div class="container">
-  <% if current_user.courses.present? %>
-    <% @my_courses.each do |course| %>
-          <div class="card-product">
-            <%= cl_image_tag(booking.course.photos[0].key, :width => 200, :height => 400) %>
-            <div class="card-product-infos">
-              <h2><%= course.title %></h2>
-            </div>
+<div class="page-body">
+  <div class="main"> 
+    <div id="pending-reservations" class="main-container row">
+      <div id="profile" class="pending col-6">
+        <%= image_tag "chef-avatar.png", class: "avatar-square" %>
+        <div class="chef-name">
+          <p>Massimo</p>
+          <p>Rossi</p>
+          <p>Edit</p>
+        </div>
+        <div class="chef-details">
+          <p>Preferred Contact</p>
+          <p>massimo.rossi@gmail.com</p>
+        </div>
+      </div>
+
+      <div id="reservations" class="pending col-6">
+        <h2>Pending Reservations</h2>
+        <div class="pending-card">
+          <div class="pending-header">
+            <h4>Tuna Steak Course</h4>
+            <h4>14 February 2021</h4>
           </div>
-    <% end %>
-  <% else %>
-    <div class="container">
-      <h2>You haven't created any courses yet!</h2>
+          <p>Requested by: Linda Evangelista</p>
+        </div>
+      </div>
     </div>
-  <% end %>
+    <div id="approved-reservations" class="main-container">
+      
+    </div>
+    <div id="my-courses" class="main-container">
+      
+    </div>
+  </div>
 </div>

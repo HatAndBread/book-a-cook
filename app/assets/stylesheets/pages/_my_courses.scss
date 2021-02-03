@@ -1,0 +1,22 @@
+.page-body {
+  background-image: asset-url("oriental.png");
+  .main {
+    width: 88%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+}
+
+.main-container {
+  height: 350px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 5px #adacac;
+  display: flex;
+}
+
+.pending {
+  flex-grow: 1;
+}
