@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
     @booking = Booking.new(booking_params)
+    @review = Review.new
     @booking.user = current_user
     @booking.course = @course
     authorize @booking
