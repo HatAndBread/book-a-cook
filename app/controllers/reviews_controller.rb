@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review.course = @course
     authorize @review
     if @review.save
-      redirect_to course_path(@course)
+      redirect_to course_path(@course, anchor: "review-#{@review.id}")
     else
       render 'courses/show'
     end
