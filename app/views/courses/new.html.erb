@@ -4,16 +4,19 @@
       <div class="col-8">
         <%= simple_form_for @course do |f| %>
           <%= f.label :title, "Title of course" %>
-          <%= f.text_field :title %>
-          <%= f.label :description, "Description of course" %>
-          <%= f.text_area :description %>
+          <%= f.text_field :title, placeholder: 'Dried fried sushi' %>
+          <%= f.label :description, "Description of course"%>
+          <%= f.text_area :description, placeholder: 'Write a detailed description of your course here'  %>
           <%= f.label :price, "Select a price" %>
           <%= f.number_field :price, {min: 1, value: 1 }%>
-          <%= f.input :ingredient_list, label:  "Select all ingredients that apply", as: :check_boxes, collection: Course::INGREDIENTS %>
-          <%= f.input :category_list, label: "Select a category", collection: Course::CATEGORIES %>
-          <%= f.submit "Create Course", class: "standard-btn"%>
+          <%= f.input :category_list, label: "Select categories", collection: Course::CATEGORIES, input_html: {multiple: true} %>
+          <%= f.input :ingredient_list, label: "Select ingredients", collection: Course::INGREDIENTS, input_html: {multiple: true} %>
+          <div style="display: flex; justify-content: center;">
+            <%= f.submit "Create Course", class: "standard-btn"%>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'new-course' %>

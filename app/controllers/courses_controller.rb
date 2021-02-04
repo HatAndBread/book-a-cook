@@ -36,7 +36,6 @@ class CoursesController < ApplicationController
     authorize @course
 
     puts @course.valid?
-    @course.save!
     if @course.save
       redirect_to course_path(@course)
     else
@@ -48,6 +47,6 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:title, :description, :price, :user, category_list: [], ingredient_list: [])
+    params.require(:course).permit(:title, :description, :price, :user, photos: [], category_list: [], ingredient_list: [])
   end
 end
