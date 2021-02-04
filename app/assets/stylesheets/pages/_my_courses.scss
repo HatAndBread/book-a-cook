@@ -1,5 +1,7 @@
 .page-body {
   background-image: asset-url("oriental.png");
+  font-family: 'Poppins';
+  color: #2F302F;
   .main {
     width: 88%;
     margin: 0 auto;
@@ -17,6 +19,70 @@
   display: flex;
 }
 
-.pending {
+#profile {
+  padding-right: 50px;
+}
+
+.chef-avatar {
+  background-image: asset-url("chef-avatar.png");
+  background-position: top;
+  background-size: 220px 150px;
+  background-repeat: no-repeat;
+  width: 130px;
+  height: 100px;
+  border-radius: 5px;
+  margin-right: 40px;
+}
+
+.chef-name {
+  margin-top: 15px;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.text-details {
+  display: flex;
   flex-grow: 1;
+  border-bottom: 1px solid #D9BD54;
+  #first{
+    padding-top: 50px;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #last{
+    padding-top: 50px;
+    flex-grow: 1;
+    font-size: 25px;
+  }
+  #edit {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e504e;
+    padding-right: 20px;
+  }
+}
+
+.chef-details {
+  display: flex;
+  font-size: 18px;
+  padding: 16px 0;
+  p {
+    padding: 0 8px;
+  }
+  #details-title {
+    color: $dark-green;
+  }
+}
+
+#reservations {
+  margin-top: 15px;
+  overflow: auto;
+  h2 {
+    text-align: right;
+    color: #D9BD54;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
 }

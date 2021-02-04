@@ -2,14 +2,17 @@
   <div class="main"> 
     <div id="pending-reservations" class="main-container row">
       <div id="profile" class="pending col-6">
-        <%= image_tag "chef-avatar.png", class: "avatar-square" %>
+        <%# <%= image_tag "chef-avatar.png", class: "avatar-square" %>
         <div class="chef-name">
-          <p>Massimo</p>
-          <p>Rossi</p>
-          <p>Edit</p>
+          <div class="chef-avatar"></div>
+          <div class="text-details">
+            <p id="first">Massimo</p>
+            <p id="last">Rossi</p>
+            <p id="edit">Edit</p>
+          </div>
         </div>
         <div class="chef-details">
-          <p>Preferred Contact</p>
+          <p id="details-title">Preferred Contact:</p>
           <p>massimo.rossi@gmail.com</p>
         </div>
       </div>
@@ -17,11 +20,19 @@
       <div id="reservations" class="pending col-6">
         <h2>Pending Reservations</h2>
         <div class="pending-card">
-          <div class="pending-header">
-            <h4>Tuna Steak Course</h4>
-            <h4>14 February 2021</h4>
+          <div class="pending-title">
+            <h5>Tuna Steak Course</h5>
+            <p>Requested by: Linda Evangelista</p>
           </div>
-          <p>Requested by: Linda Evangelista</p>
+          <h5 id="date">14 February 2021</h5>
+        </div>
+
+        <div class="pending-card">
+          <div class="pending-title">
+            <h5>Tuna Steak Course</h5>
+            <p>Requested by: Linda Evangelista</p>
+          </div>
+          <h5 id="date">14 February 2021</h5>
         </div>
       </div>
     </div>

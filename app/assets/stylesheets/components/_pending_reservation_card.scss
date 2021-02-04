@@ -1,0 +1,23 @@
+.pending-card {
+  display: flex;
+  box-shadow: 1px 2px 4px #c7c6c6;
+  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 10px;
+  .pending-title {
+    flex-grow: 1;
+    h5 {
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    p {
+      color: #5B5B5B;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+#date {
+  font-size: 18px;
+}
