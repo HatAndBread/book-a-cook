@@ -4,28 +4,23 @@ class BookingsController < ApplicationController
     authorize @bookings
   end
 
-  def new
-    @course = Course.find(params[:course_id])
-    @booking = Booking.new
-    authorize @booking
-  end
-
   def create
     @course = Course.find(params[:course_id])
     @booking = Booking.new(booking_params)
+    @review = Review.new
     @booking.user = current_user
     @booking.course = @course
     authorize @booking
     if @booking.save
       redirect_to my_bookings_path
     else
-      render :new
+      render "courses/show"
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:attendees, :start_time, :end_time, :location, :course_id)
+    params.require(:booking).permit(:attendees, :start_time, :end_time, :address, :course_id)
   end
 end

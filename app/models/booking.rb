@@ -9,5 +9,5 @@ class Booking < ApplicationRecord
   validates :attendees, numericality: {only_integer: true}
   validates :start_time, presence: true
   validates :end_time, presence: true
-  validates :location, presence: true
+  validates :address, presence: true
 end
