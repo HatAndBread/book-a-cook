@@ -29,20 +29,7 @@
         <h3 class="title">Our Chef</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</p>
       </div>
-      <div class="reviews">
-        <h1 class="title">Our Customers Say...</h1>
-        <div class="review">
-          <% @course.reviews.each do |review| %>
-            <div class="review-text">
-              <p id="review-<%= review.id %>"><%= review.content %></p>
-            </div>
-          <% end %>
-        </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-          Launch demo modal
-        </button>
-        <%= render 'components/modal' %>
-      </div>
+      <%= render 'components/review_conditional' %>
     </div>
     <div class="photo-form-container">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

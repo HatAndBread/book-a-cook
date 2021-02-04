@@ -1,0 +1,24 @@
+<% if @course.reviews.empty? %>
+  <div class="reviews">
+    <h1 class="title">Be the first to review...</h1>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+      Launch demo modal
+    </button>
+    <%= render 'components/modal' %>
+  </div>
+<% else %>
+  <div class="reviews">
+    <h1 class="title">Our Customers Say...</h1>
+    <div class="review">
+      <% @course.reviews.each do |review| %>
+        <div class="review-text">
+          <p id="review-<%= review.id %>"><%= review.content %></p>
+        </div>
+      <% end %>
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+      Launch demo modal
+    </button>
+    <%= render 'components/modal' %>
+  </div>
+<% end %>
