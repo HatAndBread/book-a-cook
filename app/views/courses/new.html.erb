@@ -11,6 +11,7 @@
           <%= f.number_field :price, {min: 1, value: 1 }%>
           <%= f.input :category_list, label: "Select categories", collection: Course::CATEGORIES, input_html: {multiple: true} %>
           <%= f.input :ingredient_list, label: "Select ingredients", collection: Course::INGREDIENTS, input_html: {multiple: true} %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <div style="display: flex; justify-content: center;">
             <%= f.submit "Create Course", class: "standard-btn"%>
           </div>
