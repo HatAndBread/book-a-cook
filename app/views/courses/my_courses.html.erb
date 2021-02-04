@@ -1,16 +1,97 @@
-<div class="container">
-  <% if current_user.courses.present? %>
-    <% @my_courses.each do |course| %>
-          <div class="card-product">
-            <%= cl_image_tag(booking.course.photos[0].key, :width => 200, :height => 400) %>
-            <div class="card-product-infos">
-              <h2><%= course.title %></h2>
+<div class="page-body">
+  <div class="main"> 
+    <div id="pending-reservations" class="main-container row">
+      <div id="profile" class="pending col-6">
+        <%# <%= image_tag "chef-avatar.png", class: "avatar-square" %>
+        <div class="chef-name">
+          <div class="chef-avatar"></div>
+          <div class="text-details">
+            <p id="first">Massimo</p>
+            <p id="last">Rossi</p>
+            <p id="edit">Edit</p>
+          </div>
+        </div>
+        <div class="chef-details">
+          <p id="details-title">Preferred Contact:</p>
+          <p>massimo.rossi@gmail.com</p>
+        </div>
+      </div>
+
+      <div id="pending" class="reservations col-6">
+        <h2>Pending Reservations</h2>
+        <div class="pending-card">
+          <div class="pending-title">
+            <h5>Tuna Steak Course</h5>
+            <p>Requested by: Linda Evangelista</p>
+          </div>
+          <h5 id="date">14 February 2021</h5>
+        </div>
+        <div class="pending-card">
+          <div class="pending-title">
+            <h5>Tuna Steak Course</h5>
+            <p>Requested by: Linda Evangelista</p>
+          </div>
+          <h5 id="date">14 February 2021</h5>
+        </div>
+      </div>
+    </div>
+
+    <div id="approved-reservations" class="main-container row">
+      <div class="map col-6">
+      </div>
+      <div id="approved" class="reservations col-6">
+        <h2>Upcoming Reservations</h2>
+        <div class="approved-card">
+          <div class="approved-image">
+          </div>
+          <div class="approved-body">
+            <div class="title">
+              <div class="customer-info">
+                <h5>Tuna Steak Course</h5>
+                <p>Booked by: Linda Evangelista</p>
+              </div>
+              <div class="customer-avatar"></div>
+            </div>
+            <div class="details">
+              <p>Date: 14 February 2021</p>
+              <p>Participants: 2</p>
+              <p id="status">Status: <span>Approved</span></p>
             </div>
           </div>
-    <% end %>
-  <% else %>
-    <div class="container">
-      <h2>You haven't created any courses yet!</h2>
+        </div>
+      </div>
     </div>
-  <% end %>
+
+    <div id="my-courses" class="row">
+      <div class="courses-header">
+        <div class='titles'>
+          <h2>Your Creations</h2>
+          <p>Manage your courses from here and add new ones.</p>
+        </div>
+        <div id="course-button">
+          <%= link_to "Create Course", new_course_path, class: "search-btn" %>
+        </div>
+      </div>
+      <div class="courses-cards">
+        <div class="course_card" style="background-image: url('https://picsum.photos/300/300')">
+          <div class="text-overlay">
+            <div class="c-title">
+              <h3>Tuna Steak Course</h3>
+              <p>by Chef Massimo</p>
+            </div>
+            <div class="c-footer">
+              <div class="tags">
+                <p class="tag">vegetarian</p>
+                <p class="tag">healthy</p>
+              </div>
+              <div class="icons">
+                <i class="fas fa-share"></i>
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

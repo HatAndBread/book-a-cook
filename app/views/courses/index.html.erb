@@ -22,36 +22,9 @@
     </div>
   </div>
   <div class="courses">
-    <% @courses.each do |course| %>
-      <%= link_to  course_path(course), class: 'c-link' do%>
-        <div class="course_card" 
-             data-aos="fade-up"
-             data-aos-duration="1000"
-             style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" 
-             >
-          <div class="text-overlay">
-            <div class="c-title">
-              <h3><%= course.title %></h3>
-              <p>by Chef <%= course.user.first_name %></p>
-            </div>
-            <div class="c-footer">
-              <div class="tags">
-                <% course.category_list.each do |t| %>
-                  <p class="tag"><%= t %></p>
-                <% end %>
-                <% course.ingredient_list.each do |t| %>
-                  <p class="tag"><%= t %></p>
-                <% end %>
-              </div>
-              <div class="icons">
-                <i class="fas fa-share"></i>
-                <i class="far fa-heart"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+
+    <%= render 'components/course_card' %>
+
   </div>
 </div>
 <%= javascript_pack_tag "courses-index" %>

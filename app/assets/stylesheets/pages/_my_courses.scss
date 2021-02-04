@@ -1,0 +1,130 @@
+.page-body {
+  background-image: asset-url("oriental.png");
+  font-family: 'Poppins';
+  color: #2F302F;
+  .main {
+    width: 88%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+}
+
+.main-container {
+  height: 350px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 5px #adacac;
+  display: flex;
+}
+
+// ----------- PENDING SECTION --------------- //
+
+#profile {
+  padding-right: 50px;
+}
+
+.chef-name {
+  margin-top: 15px;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.text-details {
+  display: flex;
+  flex-grow: 1;
+  border-bottom: 1px solid #D9BD54;
+  #first{
+    padding-top: 50px;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #last{
+    padding-top: 50px;
+    flex-grow: 1;
+    font-size: 25px;
+  }
+  #edit {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e504e;
+    padding-right: 20px;
+  }
+}
+
+.chef-details {
+  display: flex;
+  font-size: 18px;
+  padding: 16px 0;
+  p {
+    padding: 0 8px;
+  }
+  #details-title {
+    color: $dark-green;
+  }
+}
+
+.reservations {
+  margin-top: 15px;
+  overflow: auto;
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+}
+
+#pending h2 {
+  text-align: right;
+  color: #D9BD54;
+}
+
+// ----------- APPROVED SECTION --------------- //
+
+#approved h2 {
+  color: $dark-green;
+}
+
+#approved-reservations {
+  height: 500px;
+}
+
+// ----------- APPROVED SECTION --------------- //
+
+#my-courses {
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 5px #adacac;
+  display: flex;
+}
+
+.courses-header {
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.titles {
+  flex-grow: 1;
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: $dark-green;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+#course-button {
+    padding-top: 20px;
+}
+
+.courses-cards {
+  display: flex;
+}

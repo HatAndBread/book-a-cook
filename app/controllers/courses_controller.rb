@@ -19,6 +19,7 @@ class CoursesController < ApplicationController
 
 
   def my_courses
+    @user = current_user
     @my_courses = Course.where(user: current_user).order(created_at: :ASC)
     authorize @my_courses
   end
