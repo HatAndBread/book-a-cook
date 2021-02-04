@@ -2,13 +2,10 @@
   <%= link_to root_path, class: "navbar-brand brand" do %>
     <%= image_tag "chefvector.png", id: "nav-logo" %>
     <p><span style="color:#497E4B;">book</span><span style="color:#D9BD54;">a</span><span style="color:#497E4B">cook</span></p>
-    <% end %>
-
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -30,6 +27,9 @@
           </div>
         </li>
       <% else %>
+        <li class="nav-item">
+          <%= link_to "Signup", new_user_registration_path, class: "nav-link text-success" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link text-success" %>
         </li>
