@@ -15,10 +15,14 @@
       <div class="card-product">
         <%= cl_image_tag(booking.course.photos[0].key, :width => 200, :height => 400) %>
         <div class="card-product-infos">
-          <h2><%= booking.course.title %></h2>
+          <h2><%= link_to "#{booking.course.title} Course", course_path(booking.course) %></h2>
           <p><%= booking.start_time %></p>
           <p><%= booking.course.description %></p>
-          <p class="status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
+          <p>For <%= pluralize booking.attendees, "person" %></p>
+        </div>
+        <div class="chef-status">
+          <%= image_tag "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80", alt: "alttext" %>
+          <p class="booking-status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
         </div>
       </div>
     <% end %>

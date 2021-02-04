@@ -14,7 +14,10 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to my_bookings_path
     else
-      render "courses/show"
+      respond_to do |f|
+        f.html { render "courses/show" }
+        f.js { redirect_to course_path(@course, anchor: "contact-chef") }
+      end
     end
   end
 
@@ -24,3 +27,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:attendees, :start_time, :end_time, :address, :course_id)
   end
 end
+
+
