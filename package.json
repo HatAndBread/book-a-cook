@@ -11,6 +11,7 @@
     "bootstrap": "^4.6.0",
     "chinpunkanpun": "^1.0.1",
     "jquery": "^3.5.1",
+    "mapbox-gl": "^2.0.1",
     "owl.carousel": "^2.3.4",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0",

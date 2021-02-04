@@ -68,7 +68,7 @@
 
 .reservations {
   margin-top: 15px;
-  overflow: auto;
+  overflow-x: hidden;
   h2 {
     font-size: 28px;
     font-weight: 400;
@@ -91,13 +91,17 @@
   height: 500px;
 }
 
+#mapbox {
+  padding-left: 0;
+}
+
 // ----------- APPROVED SECTION --------------- //
 
 #my-courses {
   flex-direction: column;
   padding: 16px;
   border-radius: 5px;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: white;
   margin-bottom: 20px;
   box-shadow: 3px 3px 5px #adacac;
