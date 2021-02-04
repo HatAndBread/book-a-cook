@@ -86,3 +86,45 @@
 #approved h2 {
   color: $dark-green;
 }
+
+#approved-reservations {
+  height: 500px;
+}
+
+// ----------- APPROVED SECTION --------------- //
+
+#my-courses {
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 5px #adacac;
+  display: flex;
+}
+
+.courses-header {
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.titles {
+  flex-grow: 1;
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: $dark-green;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+#course-button {
+    padding-top: 20px;
+}
+
+.courses-cards {
+  display: flex;
+}
