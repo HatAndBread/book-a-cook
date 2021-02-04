@@ -1,7 +1,7 @@
 .card-product {
   margin-bottom: 15px;
   overflow: hidden;
-  height: 12vw;
+  height: 10vw;
   background: white;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -19,6 +19,15 @@
   margin: 0;
 }
 
+.card-product a {
+  color: $dark-green;
+}
+
+.card-product a:hover {
+  text-decoration: none;
+  color: #D9BD54;
+}
+
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -28,5 +37,31 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  height: 21vh;
+  width: 50vw;
+  padding: 10px 0px 0px 16px;
+}
+
+.card-product .chef-status {
+  height: 21vh;
+  width: 17vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+
+  img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 4px
+  }
+
+  .booking-status {
+    font-weight: bold;
+    font-size: 16px;
+    opacity: 1;
+  }
 }
