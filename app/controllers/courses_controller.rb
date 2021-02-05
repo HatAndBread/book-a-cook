@@ -17,12 +17,12 @@ class CoursesController < ApplicationController
     authorize @course
   end
 
-
   def my_courses
+    @user = current_user
     @my_courses = Course.where(user: current_user).order(created_at: :ASC)
     @my_reservations = Booking.where(course_id: @my_courses)
-    @user = current_user
-    @markers = @my_reservations.geocoded.map do |booking|
+    @my_approved_reservations = @my_reservations.where(status: 'approved')
+    @markers = @my_approved_reservations.geocoded.map do |booking|
       {
         lat: booking.latitude,
         lng: booking.longitude

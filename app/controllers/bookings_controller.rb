@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def my_bookings
+    @user = current_user
     @bookings = Booking.where(user: current_user).order(created_at: :ASC)
     authorize @bookings
   end
