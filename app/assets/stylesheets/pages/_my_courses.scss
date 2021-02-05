@@ -126,9 +126,14 @@
 }
 
 #course-button {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .courses-cards {
   display: flex;
+}
+
+#modal-link {
+  text-decoration: none;
+  color: inherit;
 }

@@ -20,18 +20,22 @@
         <h2>Pending Reservations</h2>
         <% @my_reservations.each do |reservation| %>
           <% if reservation.status === 'pending' %>
-            <div class="pending-card">
-              <div class="pending-title">
-                <h5><%= reservation.course.title %></h5>
-                <p>Requested by: <%= reservation.user.first_name %> <%= reservation.user.last_name %></p>
+            <%= link_to my_courses_path, id: 'modal-link', "data-toggle": "modal", "data-target": "#exampleModalCenter" do %>
+              <div class="pending-card">
+                <div class="pending-title">
+                  <h5><%= reservation.course.title %></h5>
+                  <p>Requested by: <%= reservation.user.first_name %> <%= reservation.user.last_name %></p>
+                </div>
+                <h5 id="date"><%= reservation.start_time %></h5>
               </div>
-              <h5 id="date"><%= reservation.start_time %></h5>
-            </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
 
+    <%= render 'components/mycourses_modal' %>
+    
     <div id="approved-reservations" class="main-container row">
       <div id="mapbox" class="map col-6">
         <div id="map"
