@@ -121,16 +121,14 @@ p.description {
 
 //Info cards undder banner
 .info-cards-container {
-  width: 98vw;
-  padding: 0 5vw;
+  width: 100vw;
   display: flex;
+  justify-content: space-evenly;
 
   .card {
     background-color: transparent;
     border-style: none;
     display: flex;
-    flex-grow: 1;
-    margin: 16px;
     align-items: center;
   }
   .card-icon {
@@ -170,7 +168,7 @@ p.description {
 }
 
 .size {
-  width: 320px;
+  width: 280px;
   height: 270px;
 }
 
@@ -180,7 +178,7 @@ p.description {
     align-items: center;
   }
   .card {
-    width: 350px;
+    width: 330px;
   }
   h1.home {
     font-size: 6vw;
