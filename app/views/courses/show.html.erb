@@ -27,7 +27,7 @@
       </div>
       <div class="course-info-card">
         <h3 class="title">Our Chef</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris turpis leo nam malesuada placerat est massa imperdiet. Vitae et dolor maecenas augue volutpat. Sem cursus vitae lectus sed.</p>
+        <p><%= @course.user.description %></p>
       </div>
       <%= render 'components/review_conditional' %>
     </div>
