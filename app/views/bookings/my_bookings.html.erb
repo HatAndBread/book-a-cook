@@ -62,7 +62,13 @@
           <% else %>
             <%= image_tag "no-avatar.jpg" %>
           <% end %>
-          <p class="booking-status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
+          <% if booking.status == "approved" %>
+            <p class="booking-status">Status: <span style= "color: #497e4b;"><%= booking.status.capitalize %></span></p>
+          <% elsif booking.status == "denied"%>
+            <p class="booking-status">Status: <span style= "color: red;"><%= booking.status.capitalize %></span></p>
+          <% else %>
+            <p class="booking-status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
+          <% end %>
         </div>
       </div>
     <% end %>
