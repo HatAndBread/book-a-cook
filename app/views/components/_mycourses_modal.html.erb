@@ -1,23 +1,59 @@
 <div class="modal" id="reservationModal-<%= reservation.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content ">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Reservation Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <p>Confirm the booking?</p>
-        <%= simple_form_for reservation do |f| %>
-          <%= f.input :status, as: :hidden, input_html: {value: "approved"} %>
-          <%= f.submit "Accept" %>
-        <% end %>
 
-        <%= simple_form_for reservation do |f| %>
-          <%= f.input :status, as: :hidden, input_html: {value: "denied"} %>
-          <%= f.submit "Reject" %>
-        <% end %>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="course-info row">
+            <div class="course-image center col-4">
+              <%= cl_image_tag reservation.course.photos[0].key, height: 150, width: 250, crop: :fit %>
+            </div>
+            <div class="course-description left col-8">
+              <p id="course-title"><%= reservation.course.title %></p>
+              <p><%= reservation.course.description %></p>
+            </div>
+          </div>
+
+          <div class="customer-info row">
+            <div class="col-4 center customer-picture">
+              <div class="customer-avatar"></div>
+            </div>
+            <div class="customer-details left col-8">
+              <p><%= reservation.user.first_name %> <%= reservation.user.last_name %> </p>
+              <p><%= reservation.user.email %></p>
+            </div>
+          </div>
+
+          <div class="booking-info row">
+            <div class="left col-6">
+              <p>Number of participants: <%= reservation.attendees %></p>
+              <p>Location: <%= reservation.address %></p>
+            </div>
+            <div class="left col-6">
+              <p>When: <%= reservation.start_time %></p>
+            </div>
+          </div>
+
+          <div class="row confirm">
+            <p id="confirm">Confirm the booking?</p>
+            <div class="buttons">
+              <%= simple_form_for reservation do |f| %>
+                <%= f.input :status, as: :hidden, input_html: {value: "approved"} %>
+                <%= f.submit "Accept", id: "accept", class: "button" %>
+              <% end %>
+              <%= simple_form_for reservation do |f| %>
+                <%= f.input :status, as: :hidden, input_html: {value: "denied"} %>
+                <%= f.submit "Reject", id: "reject", class: "button" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
