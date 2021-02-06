@@ -10,7 +10,10 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to course_path(@course, anchor: "review-#{@review.id}")
     else
-      render 'courses/show'
+      respond_to do |f|
+        f.html { render "courses/show" }
+        f.js
+      end
     end
   end
 

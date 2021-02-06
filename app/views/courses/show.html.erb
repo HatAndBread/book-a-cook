@@ -58,13 +58,9 @@
       <div class="booking-form">
         <h3 id="contact-chef">Contact Chef <%= @course.user.first_name %> Right Away</h3>
         <p>Fill in your details and send a request to our Chef</p>
-        <%= simple_form_for([@course, @booking], remote: true) do |f| %>
-          <%= f.input :address, placeholder: 'Tokyo', label: "The Where" %>
-          <%= f.input :attendees, as: :numeric, label: 'The Who', input_html: { min: 1, max: 100, placeholder: 'Attendees' } %>
-          <%= f.input :start_time, as: :datetime, html5: true%>
-          <%= f.input :end_time, as: :datetime, html5: true%>
-          <%= f.submit "Send a Request", class: "submit-btn" %>
-        <% end %>
+        <div id="bookings-form">
+          <%= render 'forms/booking_form' %>
+        </div>
       </div>
     </div>
   </div>
