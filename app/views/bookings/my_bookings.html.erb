@@ -2,14 +2,14 @@
   <div class="user-profile">
     <div class="user">
 
-      
+
       <% if current_user.photo.attached?  %>
         <%= cl_image_tag current_user.photo.key%>
       <% else %>
         <%= image_tag "no-avatar.jpg" %>
       <% end %>
 
-                              
+
       <div class="user-name">
         <h2><%= @user.first_name %></h2>
         <h2><%= @user.last_name %></h2>
@@ -17,7 +17,7 @@
     </div>
     <div class="profile-breaker"></div>
     <div class="user-info">
-      <p><%= current_user.description %></p>
+      <p>"Cooking is like magic, but my wand sometimes looks like a spatula."</p>
     </div>
     <div class="profile-breaker"></div>
     <div class="logo">
@@ -27,11 +27,20 @@
     </div>
   </div>
 
-  
+
 
   <% if current_user.bookings.empty? %>
-    <p>You have no bookings</p>
-    <%= link_to "Choose a course",  courses_path %>
+
+    <div class="no-bookings">
+      <h3>You have no bookings</h3>
+      <%= link_to  courses_path, class: 'index-btn' do%>
+        <div>
+          <p style="margin: 0;">Choose a course</p>
+        </div>
+      <% end %>
+
+    </div>
+
   <% else %>
 
 
@@ -53,17 +62,23 @@
           <% else %>
             <%= image_tag "no-avatar.jpg" %>
           <% end %>
-          <p class="booking-status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
+          <% if booking.status == "approved" %>
+            <p class="booking-status">Status: <span style= "color: #497e4b;"><%= booking.status.capitalize %></span></p>
+          <% elsif booking.status == "denied"%>
+            <p class="booking-status">Status: <span style= "color: red;"><%= booking.status.capitalize %></span></p>
+          <% else %>
+            <p class="booking-status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
 
-  
+
   <% end %>
 
 
-                              
+
 </div>
 <!--   create_table "bookings", force: :cascade do |t|
     t.integer "attendees"
