@@ -1,8 +1,11 @@
 <div class="my-bookings-container">
-
   <div class="user-profile">
     <div class="user">
-      <%= image_tag "https://images.unsplash.com/photo-1611769864329-ef8d67d6cf78?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80", alt: "alttext" %>
+      <% if current_user.photo.attached?  %>
+        <%= cl_image_tag current_user.photo.key%>
+      <% else %>
+        <%= image_tag "no-avatar.jpg" %>
+      <% end %>
       <div class="user-name">
         <h2><%= @user.first_name %></h2>
         <h2><%= @user.last_name %></h2>
@@ -10,7 +13,6 @@
     </div>
     <div class="profile-breaker"></div>
     <div class="user-info">
-
     </div>
     <div class="profile-breaker"></div>
     <div class="logo">
@@ -19,7 +21,6 @@
       <div class="bar"></div>
     </div>
   </div>
-
   <div class="user-bookings">
     <h3>Find details about your upcoming bookings below</h3>
     <p style="margin-bottom: 30px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
@@ -33,17 +34,17 @@
           <p>For <%= pluralize booking.attendees, "person" %></p>
         </div>
         <div class="chef-status">
-          <%= image_tag "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80", alt: "alttext" %>
+          <% if booking.course.user.photo.attached?  %>
+            <%= cl_image_tag booking.course.user.photo.key%>
+          <% else %>
+            <%= image_tag "no-avatar.jpg" %>
+          <% end %>
           <p class="booking-status">Status: <span style= "color: #D9BD54;"><%= booking.status.capitalize %></span></p>
         </div>
       </div>
     <% end %>
   </div>
-
 </div>
-
-
-
 <!--   create_table "bookings", force: :cascade do |t|
     t.integer "attendees"
     t.datetime "start_time"
@@ -57,8 +58,7 @@
     t.index ["course_id"], name: "index_bookings_on_course_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end -->
-
-  <!-- create_table "courses", force: :cascade do |t|
+<!-- create_table "courses", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "price"
