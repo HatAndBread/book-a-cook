@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_one_attached :photo
-  validates_presence_of :description, presence: true, message: "can't be blank"
 end
