@@ -20,6 +20,9 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
             <%= f.input :photo, as: :file, label: 'Select an avatar' %>
+            <%= f.label :description, label: "If you would like to offer your services as a chef, please write a detailed description of your skill set" %>
+            <br/>
+            <%= f.text_area :description, class: "new-user-area" %>
           </div>
           <div class="form-actions" style="padding: 16px;">
             <%= f.button :submit, "Sign up", class: "standard-btn" %>

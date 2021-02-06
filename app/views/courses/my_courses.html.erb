@@ -1,5 +1,5 @@
 <div class="page-body">
-  <div class="main"> 
+  <div class="main">
     <div id="pending-reservations" class="main-container row">
       <div id="profile" class="pending col-6">
         <div class="chef-name">
@@ -15,34 +15,31 @@
           <p><%= @user.email %></p>
         </div>
       </div>
-
       <div id="pending" class="reservations col-6">
         <h2>Pending Reservations</h2>
         <% @my_reservations.each do |reservation| %>
           <% if reservation.status === 'pending' %>
-            <%= link_to my_courses_path, id: 'modal-link', "data-toggle": "modal", "data-target": "#exampleModalCenter" do %>
-              <div class="pending-card">
+              <div class="pending-card" data-toggle="modal" data-target="#reservationModal-<%= reservation.id %>">
                 <div class="pending-title">
                   <h5><%= reservation.course.title %></h5>
                   <p>Requested by: <%= reservation.user.first_name %> <%= reservation.user.last_name %></p>
                 </div>
                 <h5 id="date"><%= reservation.start_time %></h5>
               </div>
-            <% end %>
           <% end %>
+          <%= render 'components/mycourses_modal', reservation: reservation %>
         <% end %>
       </div>
     </div>
 
-    <%= render 'components/mycourses_modal' %>
-    
     <div id="approved-reservations" class="main-container row">
       <div id="mapbox" class="map col-6">
         <div id="map"
             style="width: 100%; height: 500px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+         </div>
+
       </div>
       <div id="approved" class="reservations col-6">
         <h2>Upcoming Reservations</h2>
@@ -70,7 +67,6 @@
         <% end %>
       </div>
     </div>
-
     <div id="my-courses" class="row">
       <div class="courses-header">
         <div class='titles'>
@@ -83,8 +79,8 @@
       </div>
       <div class="courses-cards">
         <% @my_courses.each do |course| %>
-          <%= link_to  course_path(course), class: 'c-link' do%>    
-            <div class="course_card" 
+          <%= link_to  course_path(course), class: 'c-link' do%>
+            <div class="course_card"
                   style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" 
                   >
               <div class="text-overlay">
@@ -110,6 +106,6 @@
             </div>
           <% end %>
         <% end %>
+      </div>
     </div>
   </div>
-</div>
