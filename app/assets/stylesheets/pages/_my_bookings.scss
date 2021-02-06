@@ -37,6 +37,10 @@
       .user-info {
         width: 20vw;
         height: 20vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
 
       .profile-breaker {
