@@ -22,10 +22,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    # @booking.status = 'approved'
+    @booking.update(booking_params)
+
+    redirect_to my_courses_path
+    authorize @booking
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:attendees, :start_time, :end_time, :address, :course_id)
+    params.require(:booking).permit(:attendees, :start_time, :end_time, :address, :course_id, :status)
   end
 end
 

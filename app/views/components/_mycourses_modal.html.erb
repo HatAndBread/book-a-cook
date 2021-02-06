@@ -1,4 +1,4 @@
-<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal" id="reservationModal-<%= reservation.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,27 +9,17 @@
       </div>
       <div class="modal-body">
         <p>Confirm the booking?</p>
-        <%= simple_form_for(@booking, remote: true) do |f| %>
-          <div class="form-group">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="approved">
-              <label class="form-check-label" for="inlineCheckbox1">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="rejected">
-              <label class="form-check-label" for="inlineCheckbox2">No</label>
-            </div>
-            <small id="emailHelp" class="form-text text-muted">By selecting 'Yes' you agree to confirm the booking and a confirmation email will be sent to the customer.</small>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= simple_form_for reservation do |f| %>
+          <%= f.input :status, as: :hidden, input_html: {value: "approved"} %>
+          <%= f.submit "Accept" %>
+        <% end %>
+
+        <%= simple_form_for reservation do |f| %>
+          <%= f.input :status, as: :hidden, input_html: {value: "denied"} %>
+          <%= f.submit "Reject" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<%= simple_form_for([@course, @review], remote: true) do |f| %>
-  <%= f.input :content, as: :text %>
-  <%= f.button :submit %>
-<% end %>
