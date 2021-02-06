@@ -13,7 +13,7 @@
             <%= label_tag 'ingredients', "For the more sophisticated:", class: 'label' %>
             <%= select_tag :ingredients, options_for_select(Course::INGREDIENTS), include_blank: "More options in here", class: 'form-control' %>
           </div>
-          <div class="buttons">
+          <div class="search-buttons">
             <%= submit_tag "Search", class: "search-btn" %>
             <%= link_to "Cancel", courses_path, class: "reset-btn" %>
           </div>
