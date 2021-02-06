@@ -12,6 +12,7 @@
 @import 'new_course';
 @import 'pending_reservation_card';
 @import 'approved_reservation_card';
+@import 'text_area';
 
 .standard-btn {
   background-color: #d9bd54;
@@ -25,4 +26,3 @@
 .standard-btn:hover {
   background-color: $dark-green;
 }
-

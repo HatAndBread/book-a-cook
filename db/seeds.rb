@@ -8,6 +8,7 @@ User.destroy_all
   user.last_name = Faker::Name.last_name
   user.email = Faker::Internet.email
   user.password = Faker::Internet.password
+  user.description = "#{Faker::Movies::BackToTheFuture.quote} #{Faker::Movies::BackToTheFuture.quote} #{Faker::Movies::BackToTheFuture.quote}"
   user.photo.attach(io: file, filename: "#{rand(1..1000000)}.png", content_type: 'image/png')
   user.save
   puts "Randomly generated user:"
