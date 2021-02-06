@@ -115,6 +115,10 @@ p.description {
   }
 }
 
+.bottom {
+  padding-bottom: 50px;
+}
+
 //Info cards undder banner
 .info-cards-container {
   width: 98vw;
@@ -133,13 +137,20 @@ p.description {
     position: absolute;
     height: 125px;
     width: 125px;
-    background-color: $dark-green;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 80px;
+  }
+
+  .green {
+    background-color: $dark-green;
+  }
+
+  .gold {
+    background-color: $gold;
   }
 
   .card-info {
@@ -156,6 +167,11 @@ p.description {
       color: black;
     }
   }
+}
+
+.size {
+  width: 320px;
+  height: 270px;
 }
 
 @media only screen and (max-width: 1100px) {
