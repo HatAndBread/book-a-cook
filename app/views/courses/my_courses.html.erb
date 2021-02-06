@@ -1,5 +1,5 @@
 <div class="page-body">
-  <div class="main"> 
+  <div class="main">
     <div id="pending-reservations" class="main-container row">
       <div id="profile" class="pending col-6">
         <div class="chef-name">
@@ -15,7 +15,6 @@
           <p><%= @user.email %></p>
         </div>
       </div>
-
       <div id="pending" class="reservations col-6">
         <h2>Pending Reservations</h2>
         <% @my_reservations.each do |reservation| %>
@@ -33,8 +32,6 @@
       </div>
     </div>
 
-  
-    
     <div id="approved-reservations" class="main-container row">
       <div id="mapbox" class="map col-6">
         <div id="map"
@@ -42,6 +39,7 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
          </div>
+
       </div>
       <div id="approved" class="reservations col-6">
         <h2>Upcoming Reservations</h2>
@@ -69,7 +67,6 @@
         <% end %>
       </div>
     </div>
-
     <div id="my-courses" class="row">
       <div class="courses-header">
         <div class='titles'>
@@ -82,8 +79,8 @@
       </div>
       <div class="courses-cards">
         <% @my_courses.each do |course| %>
-          <%= link_to  course_path(course), class: 'c-link' do%>    
-            <div class="course_card" 
+          <%= link_to  course_path(course), class: 'c-link' do%>
+            <div class="course_card"
                   style="background-image: url(<%= course.photos.attached? ? cl_image_path(course.photos[0].key) : 'https://picsum.photos/300/300' %>)" 
                   >
               <div class="text-overlay">
@@ -109,6 +106,6 @@
             </div>
           <% end %>
         <% end %>
+      </div>
     </div>
   </div>
-</div>

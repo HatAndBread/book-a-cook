@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     else
       respond_to do |f|
         f.html { render "courses/show" }
-        f.js { redirect_to course_path(@course, anchor: "contact-chef") }
+        f.js
       end
     end
   end

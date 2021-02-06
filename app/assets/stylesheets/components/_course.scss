@@ -54,6 +54,7 @@
   .review {
     overflow-x: hidden;
     height: 40vh;
+    margin-bottom: 1vh;
     background-color: white;
     border-radius: 4px;
     padding: 16px;
@@ -118,6 +119,38 @@
     height: 30vh;
     border-radius: 4px;
   }
+}
+
+//Review form and button
+.review-button {
+  background-color: $gold;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.review-button:hover {
+  background-color: $dark-green;
+}
+
+.review-window {
+  background: asset-url('oriental.png');
+
+  textarea {
+    height: 103px;
+  }
+}
+
+.review-submit-button {
+  background-color: $gold;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.review-submit-button:hover {
+  background-color: $dark-green;
+  color: white;
 }
 
 @media only screen and (max-width: 1000px) {
