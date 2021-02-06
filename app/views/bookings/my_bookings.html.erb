@@ -1,11 +1,15 @@
 <div class="my-bookings-container">
   <div class="user-profile">
     <div class="user">
+
+      
       <% if current_user.photo.attached?  %>
         <%= cl_image_tag current_user.photo.key%>
       <% else %>
         <%= image_tag "no-avatar.jpg" %>
       <% end %>
+
+                              
       <div class="user-name">
         <h2><%= @user.first_name %></h2>
         <h2><%= @user.last_name %></h2>
@@ -22,6 +26,15 @@
       <div class="bar"></div>
     </div>
   </div>
+
+  
+
+  <% if current_user.bookings.empty? %>
+    <p>You have no bookings</p>
+    <%= link_to "Choose a course",  courses_path %>
+  <% else %>
+
+
   <div class="user-bookings">
     <h3>Find details about your upcoming bookings below</h3>
     <p style="margin-bottom: 30px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, vero explicabo! Mollitia nesciunt ipsam officia beatae quas placeat molestias laboriosam.</p>
@@ -45,6 +58,12 @@
       </div>
     <% end %>
   </div>
+
+  
+  <% end %>
+
+
+                              
 </div>
 <!--   create_table "bookings", force: :cascade do |t|
     t.integer "attendees"
