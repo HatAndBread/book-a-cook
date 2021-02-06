@@ -65,6 +65,32 @@
     }
   }
 
+  .no-bookings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 65vh;
+    color: $dark-green;
+
+    .index-btn {
+      height: 6vh;
+      width: 12vw;
+      background-color: #d9bd54;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .index-btn:hover {
+      background-color: $dark-green;
+      text-decoration: none;
+    }
+  }
+
   .user-bookings {
     overflow-x: hidden;
     height: 90vh;

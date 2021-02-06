@@ -2,14 +2,14 @@
   <div class="user-profile">
     <div class="user">
 
-      
+
       <% if current_user.photo.attached?  %>
         <%= cl_image_tag current_user.photo.key%>
       <% else %>
         <%= image_tag "no-avatar.jpg" %>
       <% end %>
 
-                              
+
       <div class="user-name">
         <h2><%= @user.first_name %></h2>
         <h2><%= @user.last_name %></h2>
@@ -27,11 +27,20 @@
     </div>
   </div>
 
-  
+
 
   <% if current_user.bookings.empty? %>
-    <p>You have no bookings</p>
-    <%= link_to "Choose a course",  courses_path %>
+
+    <div class="no-bookings">
+      <h3>You have no bookings</h3>
+      <%= link_to  courses_path, class: 'index-btn' do%>
+        <div>
+          <p style="margin: 0;">Choose a course</p>
+        </div>
+      <% end %>
+
+    </div>
+
   <% else %>
 
 
@@ -59,11 +68,11 @@
     <% end %>
   </div>
 
-  
+
   <% end %>
 
 
-                              
+
 </div>
 <!--   create_table "bookings", force: :cascade do |t|
     t.integer "attendees"
