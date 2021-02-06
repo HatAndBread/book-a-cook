@@ -1,8 +1,9 @@
 .approved-card {
+  background-color: white;
   display: flex;
   box-shadow: 1px 2px 4px #c7c6c6;
   border-radius: 5px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   .approved-image {
     width: 150px;
     height: 150px;
@@ -18,7 +19,7 @@
       font-size: 15px;
       color: #0E0E0E;
     }
-  } 
+  }
 }
 
 .title {
