@@ -1,4 +1,4 @@
 <%= simple_form_for([@course, @review], remote: true) do |f| %>
-  <%= f.input :content, as: :text %>
-  <%= f.button :submit %>
+  <%= f.input :content, as: :text, label: false %>
+  <%= f.button :submit, "Submit", class: "review-submit-button" %>
 <% end %>

@@ -1,9 +1,6 @@
 <% if @course.reviews.empty? %>
   <div class="reviews">
     <h1 class="title">Be the first to review...</h1>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-      Launch demo modal
-    </button>
     <%= render 'components/modal' %>
   </div>
 <% else %>
@@ -16,9 +13,9 @@
         </div>
       <% end %>
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-      Launch demo modal
-    </button>
     <%= render 'components/modal' %>
   </div>
 <% end %>
+<button type="button" class="review-button" data-toggle="modal" data-target="#exampleModalScrollable">
+  Write a Review
+</button>
