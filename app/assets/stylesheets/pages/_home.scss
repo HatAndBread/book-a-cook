@@ -12,7 +12,7 @@
   height: 89vh;
   position: absolute;
   object-fit: cover;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .home_video {
@@ -23,7 +23,6 @@
   top: 0;
   z-index: -2;
 }
-
 
 h1.home {
   color: white;
@@ -41,13 +40,12 @@ p.description {
   font-family: Poppins;
   font-weight: 200;
   font-size: 24.4px;
-  padding-right: 46vw;
   margin-left: 7vw;
   z-index: 1;
 }
 
 .banner-button {
-  background-color: #D9BD54;
+  background-color: #d9bd54;
   width: 190px;
   height: 50px;
   border-radius: 27px;
@@ -85,9 +83,9 @@ p.description {
 
 //Info Under Banner
 .landing-info {
-  height: 110vh;
+  height: fit-content;
   width: 100vw;
-  background-image: asset-url("oriental.png");
+  background-image: asset-url('oriental.png');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,17 +118,15 @@ p.description {
 //Info cards undder banner
 .info-cards-container {
   width: 98vw;
-  margin: 10vh;
   padding: 0 5vw;
   display: flex;
-  justify-content: space-around;
 
   .card {
-    width: 277px;
-    height: 327px;
     background-color: transparent;
     border-style: none;
     display: flex;
+    flex-grow: 1;
+    margin: 16px;
     align-items: center;
   }
   .card-icon {
@@ -148,15 +144,36 @@ p.description {
 
   .card-info {
     background-color: white;
-    width: 19vw;
-    height: 39vh;
     margin-top: 9vh;
     border-radius: 16px;
     text-align: center;
-    padding-top: 5vw;
+    padding-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
 
     h2 {
       color: black;
     }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .info-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 350px;
+  }
+  h1.home {
+    font-size: 6vw;
+    padding-right: 0;
+    margin-bottom: 5vh;
+  }
+  p.description {
+    font-size: 3vw;
+    margin-bottom: 5vh;
+    padding-right: 0;
   }
 }
