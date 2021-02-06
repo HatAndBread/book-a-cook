@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :create ]
 
   end
-
+  resources :bookings, only: [ :update ]
   get "my-bookings", to: "bookings#my_bookings", as: :my_bookings
   get "my-courses", to: "courses#my_courses", as: :my_courses
 
